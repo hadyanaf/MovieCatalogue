@@ -36,6 +36,7 @@ class MovieViewModelTest {
         actualResult.add(content)
 
         movieViewModel.getContent(dummyData)
+
         TestCase.assertEquals(actualResult, movieViewModel.content)
     }
 }
