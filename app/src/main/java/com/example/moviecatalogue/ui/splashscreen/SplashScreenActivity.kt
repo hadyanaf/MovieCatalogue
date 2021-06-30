@@ -10,6 +10,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.moviecatalogue.databinding.ActivitySplashScreenBinding
 import com.example.moviecatalogue.ui.home.HomeActivity
+import com.example.moviecatalogue.utils.EspressoIdlingResource
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -19,6 +20,8 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        EspressoIdlingResource.increment()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
@@ -33,6 +36,7 @@ class SplashScreenActivity : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
+            EspressoIdlingResource.decrement()
         }, 3000)
     }
 }

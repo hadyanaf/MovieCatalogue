@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.moviecatalogue.databinding.ActivityMainBinding
 import com.example.moviecatalogue.ui.movie.MovieFragment
 import com.example.moviecatalogue.ui.tvshow.TvShowFragment
+import com.example.moviecatalogue.utils.EspressoIdlingResource
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeActivity : AppCompatActivity() {
