@@ -11,7 +11,6 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.moviecatalogue.R
-import com.example.moviecatalogue.ui.splashscreen.SplashScreenActivity
 import com.example.moviecatalogue.utils.DummyData
 import com.example.moviecatalogue.utils.EspressoIdlingResource
 import org.junit.After
@@ -39,6 +38,7 @@ class HomeActivityTest {
 
     @Test
     fun testViewPager() {
+        Thread.sleep(3000)
         onView(withId(R.id.tab_layout)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.pager))
             .check(ViewAssertions.matches(isDisplayed()))
