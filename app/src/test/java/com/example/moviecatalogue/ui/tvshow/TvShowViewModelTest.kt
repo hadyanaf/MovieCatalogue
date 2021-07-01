@@ -36,6 +36,7 @@ class TvShowViewModelTest {
         actualResult.add(content)
 
         tvShowViewModel.getContent(dummyData)
+        TestCase.assertNotNull(tvShowViewModel.content)
         TestCase.assertEquals(actualResult, tvShowViewModel.content)
     }
 }

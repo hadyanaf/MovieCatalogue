@@ -1,6 +1,7 @@
 package com.example.moviecatalogue.ui.detail
 
 import com.example.moviecatalogue.utils.DummyData
+import junit.framework.Assert
 import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Test
@@ -36,6 +37,7 @@ class DetailViewModelTest {
         val actualResult = listActualResult.find { it.id == desiredId }
 
         detailViewModel.getContent(dummyData, desiredId)
+        TestCase.assertNotNull(detailViewModel.content)
         TestCase.assertEquals(actualResult, detailViewModel.content)
     }
 }
