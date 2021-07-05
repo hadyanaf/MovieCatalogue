@@ -7,12 +7,12 @@ import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.moviecatalogue.R
 import com.example.moviecatalogue.utils.DummyData
 import com.example.moviecatalogue.utils.EspressoIdlingResource
+import org.hamcrest.Matchers.allOf
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -78,8 +78,16 @@ class HomeActivityTest {
             )
         )
         onView(withId(R.id.tv_title)).check(ViewAssertions.matches(isDisplayed()))
+        onView(allOf(withId(R.id.tv_title), withText("A Star Is Born")))
         onView(withId(R.id.tv_description)).check(ViewAssertions.matches(isDisplayed()))
+        onView(
+            allOf(
+                withId(R.id.tv_title),
+                withText("Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.")
+            )
+        )
         onView(withId(R.id.tv_release_date)).check(ViewAssertions.matches(isDisplayed()))
+        onView(allOf(withId(R.id.tv_release_date), withText("05/10/2018")))
         onView(withId(R.id.img_poster)).check(ViewAssertions.matches(isDisplayed()))
     }
 
@@ -95,8 +103,16 @@ class HomeActivityTest {
             )
         )
         onView(withId(R.id.tv_title)).check(ViewAssertions.matches(isDisplayed()))
+        onView(allOf(withId(R.id.tv_title), withText("Arrow")))
         onView(withId(R.id.tv_description)).check(ViewAssertions.matches(isDisplayed()))
+        onView(
+            allOf(
+                withId(R.id.tv_title),
+                withText("Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.")
+            )
+        )
         onView(withId(R.id.tv_release_date)).check(ViewAssertions.matches(isDisplayed()))
+        onView(allOf(withId(R.id.tv_release_date), withText("10/10/2012")))
         onView(withId(R.id.img_poster)).check(ViewAssertions.matches(isDisplayed()))
     }
 }
